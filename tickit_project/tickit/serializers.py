@@ -15,10 +15,11 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id','name', 'event', 'address','onsite_parking','capacity','venue_url','photo_url','description')
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
-    venue = serializers.HyperlinkedRelatedField(
-        view_name='venue_detail',
+
+    venue = VenueSerializer(
         read_only=True
     )
+
     event_url = serializers.ModelSerializer.serializer_url_field(
         view_name = 'event_detail'
     )
@@ -29,4 +30,4 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'venue', 'venue_id', 'name', 'type', 'description','ASL_interpreter','alcohol_served','event_url','photo_url')
+        fields = ('id', 'venue', 'venue_id', 'name', 'type', 'description', 'date', 'ASL_interpreter','alcohol_served','event_url','photo_url')
