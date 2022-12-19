@@ -29,4 +29,4 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'venue', 'venue_id', 'name', 'type', 'description','onsite_parking','alcohol_served','event_url','photo_url')
+        fields = ('id', 'venue', 'venue_id', 'name', 'type', 'description','ASL_interpreter','alcohol_served','event_url','photo_url')

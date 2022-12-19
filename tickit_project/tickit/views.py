@@ -6,14 +6,14 @@ from .serializers import VenueSerializer, EventSerializer
 
 class VenueList(generics.ListCreateAPIView):
     queryset = Venue.objects.all()
-    serializers_class = VenueSerializer
+    serializer_class = VenueSerializer
 class VenueDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset=Venue.objects.all()
-    serializers_class=VenueSerializer
+    serializer_class=VenueSerializer
 
 class EventList(generics.ListCreateAPIView):
     queryset = Event.objects.all()
-    serializers_class = EventSerializer
+    serializer_class = EventSerializer
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset=Event.objects.all()
-    serializers_class=EventSerializer
+    serializer_class=EventSerializer
